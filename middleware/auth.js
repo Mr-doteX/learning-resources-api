@@ -3,14 +3,22 @@ import User from '../models/user.js';
 
 
 
-const auth = async function (req, res, next) {
+const auth
+
+
+
+
+
+
+
+= async function (req, res, next) {
     try {
         // extract token form authourization header
-        const token = req.header('Authorization').replace('Bearer', '');
+        const token = req.header('Authorization').replace('Bearer ', '').trim();
         if(!token){
             return res.status(401).json({message:"no token provided"});
         }
-        consloe.log ("Authorizatuion Header:", req.header("Authorization"));
+        console.log ("Authorization Header:", req.header("Authorization"));
 
         // verify and decode the token
         const decoded = jwt.verify(token, process.env.JWT_SECRET);

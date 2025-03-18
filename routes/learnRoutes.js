@@ -16,12 +16,12 @@ learnRoutes.post("/login", loginUser);
 learnRoutes.get("/users", getAllUsers);
 
 // add a resource
-learnRoutes.post("/",auth, addResource);
+learnRoutes.post("/resource",auth, addResource);
 
 // get/view all resources
-learnRoutes.get("/", auth, getResource);
+learnRoutes.get("/resource", auth, getResource);
 
 // delete resources
-learnRoutes.delete("/:id", auth, deleteResource);
+learnRoutes.delete("/resource/:id", auth, deleteResource);
 
 export default learnRoutes;

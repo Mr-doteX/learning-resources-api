@@ -4,7 +4,7 @@ import { Schema, model } from "mongoose";
 const resourceSchema = new Schema({
     title: { type: String, required: true },
     link: { type: String, required: true },
-    type: { type: String, required: true, enum: ['couser', 'book', 'tutorial'] },
+    type: { type: String, required: true, enum: ['couse', 'book', 'tutorial'] },
     user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     pictures:[{type:String}]
 }, { timestamps: true });
