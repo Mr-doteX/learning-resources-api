@@ -15,7 +15,7 @@ app.use(express.json());
 
 // use routers
 app.use("/api/auth", learnRoutes);
-app.use("/api/resource", learnRoutes);
+app.use("/api", learnRoutes);
 
 
 // error handling middleware

@@ -1,4 +1,3 @@
-import auth from '../middleware/auth.js';
 import { resourceSchema } from '../validators/authValidator.js';
 import Resource from '../models/resource.js';
 
@@ -32,7 +31,7 @@ export const getResource = async (req,res) => {
 // delete a resources
 export const deleteResource =  async (req,res) => {
     try{
-        const resource = await Resources.findOneAndDelete({_id:req.params.id, user:req.user._id});
+        const resource = await Resource.findOneAndDelete({_id:req.params.id, user:req.user._id});
 
         if(!resource) return res.status(404).json({message:'Resource not found!'});
         
