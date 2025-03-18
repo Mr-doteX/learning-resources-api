@@ -1,8 +1,7 @@
 import express from "express";
-import resourceRoutes from './routes/resourceRoutes.js';
-import authRoutes from './routes/authRoutes.js';
 import mongoose from "mongoose";
 import cors from "cors";
+import learnRoutes from './routes/learnRoutes.js';
 
 // database connections
 await mongoose.connect(process.env.MONGO_URI);
@@ -15,9 +14,9 @@ app.use(cors());
 app.use(express.json());
 
 // use routers
-// app.use("/api/v1", briandevRouter);
-app.use('/api/auth',authRoutes);
-app.use('/api/resources',resourceRoutes);
+app.use("/api/auth", learnRoutes);
+app.use("/api/resource", learnRoutes);
+
 
 // error handling middleware
 app.use((err, req, res, next) => {

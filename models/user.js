@@ -4,8 +4,8 @@ import normalize from "normalize-mongoose";
 
 // user details schema
 const userSchema = new Schema({
-    name: {type: String, required: [true,'Name is required']},
-    email:{type: String, required:[true,'Email is required'], unique:true},
+    name: {type: String, required: true},
+    email:{type: String, required:true, unique:true},
     password:{type: String, required:true, minlength:[9, 'Input an minimum of 9 characters']},
 
 },{timestamps:true});

@@ -16,7 +16,7 @@ export const resourceSchema = Joi.object({
     title:Joi.string().required(),
     link:Joi.string().required(),
     type:Joi.string().valid('course','book','tutorial').required(),
-    image:Joi.string().required(),
+    pictures:Joi.array().items(Joi.string().required())
 });
 
 export const validators = {registerSchema, loginSchema, resourceSchema};
